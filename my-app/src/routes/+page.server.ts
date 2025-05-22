@@ -1,4 +1,4 @@
-import { redirectFromMyLibrary } from '../lib/server/auth';
+import { createMyLibraryRedirectFunction } from 'my-library';
 import type { Actions } from './$types';
 
 export const actions = {
@@ -8,6 +8,6 @@ export const actions = {
 		const url = data.get('url');
 		if (typeof url !== 'string') throw new Error('Invalid URL');
 
-		await redirectFromMyLibrary(url);
+		createMyLibraryRedirectFunction(url);
 	}
 } satisfies Actions;
