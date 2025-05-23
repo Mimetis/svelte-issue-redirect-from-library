@@ -13,10 +13,9 @@ export default
             {
                 dir: "dist",
                 format: "es",
-                entryFileNames: "[name].mjs",
+                entryFileNames: "[name].js",
                 banner: libraryHeader,
-                sourcemap: true,
-                intro: "'use strict';"
+                sourcemap: true
             },
 
             jsx: {
@@ -36,8 +35,7 @@ export default
                 ...Object.keys(pkg.dependencies || {}),
                 ...Object.keys(pkg.devDependencies || {}),
                 ...Object.keys(pkg.peerDependencies || {}),
-                "nuxt/app",
-                "#app"
+                "@sveltejs/kit"
             ],
 
         }
